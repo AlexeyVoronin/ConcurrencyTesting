@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{A6DB21BC-A0B8-420F-896A-EAE5B2BF52EE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ChessTest</RootNamespace>
+    <AssemblyName>ChessTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Ofira\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <RunSourceAnalysis>False</RunSourceAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Concurrency.UnitTesting.Execution">
+      <HintPath>..\..\Temp\Chess\debug\Microsoft.Concurrency.UnitTesting.Execution.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Concurrency.UnitTesting.Extensions">
+      <HintPath>..\..\Temp\Chess\debug\Microsoft.Concurrency.UnitTesting.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Concurrency.UnitTestingFramework">
+      <HintPath>..\..\Temp\Chess\bin\Microsoft.Concurrency.UnitTestingFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Concurrency.UnitTestingFramework">
+      <HintPath>..\..\Temp\Chess\debug\Microsoft.Concurrency.UnitTestingFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ManagedChess.MChess">
+      <HintPath>bin\Debug\Microsoft.ManagedChess.MChess.dll</HintPath>
+    </Reference>
+    <Reference Include="NMock3">
+      <HintPath>..\..\Users\Ofira\Downloads\NMock3 NetFx4 v3.3.30.0\NMock3.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\Program Files %28x86%29\SharpDevelop\4.2\bin\Tools\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\Users\Ofira\Downloads\Rhino.Mocks-3.6-Build-21\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Category.cs" />
+    <Compile Include="CategoryFacade.cs" />
+    <Compile Include="CategoryTests.cs" />
+    <Compile Include="ChessTest.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="IFactory.cs" />
+    <Compile Include="IStorage.cs" />
+    <Compile Include="MemoryStorage.cs" />
+    <Compile Include="MemoryStorageTests.cs" />
+    <Compile Include="MultiThreadTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderWriterLockExtensions.cs" />
+    <Compile Include="SynchronizedFactoryCache.cs" />
+    <Compile Include="SynchronizedFactoryCacheTest.cs" />
+    <Compile Include="TestCategoryAttribute.cs" />
+    <Compile Include="ThreadAccessManager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>
