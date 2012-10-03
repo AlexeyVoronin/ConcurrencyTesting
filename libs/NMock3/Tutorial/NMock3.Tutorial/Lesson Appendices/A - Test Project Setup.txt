@@ -1,0 +1,9 @@
+﻿To set up a test project to use NMock3, complete the following:
+
+ 1. Create the test project using Visual Studio.
+ 2. Download and unzip the NMock package to a known location.
+ 3. Add a file reference from your test project to the NMock3.dll.
+ 4. Create a new test class file.
+ 5. Add test methods that use expectations.
+ 
+For examples of how to use NMock3 and unit testing with MSTest or NUnit, start with Lesson 0 in this set of tutorials.

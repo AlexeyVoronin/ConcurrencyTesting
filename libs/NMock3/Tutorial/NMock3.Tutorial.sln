@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{836BC3B7-918D-46E1-8C6B-A0E961E34C9C}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assemblies", "Assemblies", "{E9F6EFE3-E1CA-457C-A0E2-47EA11775607}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\Assemblies\NMock3.dll = Solution Items\Assemblies\NMock3.dll
+		Solution Items\Assemblies\NMock3.xml = Solution Items\Assemblies\NMock3.xml
+		Solution Items\Assemblies\nunit.framework.dll = Solution Items\Assemblies\nunit.framework.dll
+		Solution Items\Assemblies\nunit.framework.xml = Solution Items\Assemblies\nunit.framework.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMock3.Tutorial", "NMock3.Tutorial\NMock3.Tutorial.csproj", "{5DDC007D-B713-4F56-8B1C-C15FA66A4514}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs07
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NMock3.Tutorial\\NMock3.Tutorial.csproj
+		SccProjectName1 = NMock3.Tutorial
+		SccLocalPath1 = NMock3.Tutorial
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DDC007D-B713-4F56-8B1C-C15FA66A4514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DDC007D-B713-4F56-8B1C-C15FA66A4514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DDC007D-B713-4F56-8B1C-C15FA66A4514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DDC007D-B713-4F56-8B1C-C15FA66A4514}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E9F6EFE3-E1CA-457C-A0E2-47EA11775607} = {836BC3B7-918D-46E1-8C6B-A0E961E34C9C}
+	EndGlobalSection
+EndGlobal

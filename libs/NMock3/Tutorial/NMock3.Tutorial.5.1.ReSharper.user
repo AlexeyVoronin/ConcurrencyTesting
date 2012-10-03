@@ -1,0 +1,107 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="_loadEvent" priority="0" />
+      <Item value="new" priority="9" />
+      <Item value="ContactEventArgs" priority="0" />
+      <Item value="Assert`0" priority="2" />
+      <Item value="_presenter" priority="0" />
+      <Item value="_mockView" priority="7" />
+      <Item value="v" priority="3" />
+      <Item value="m" priority="0" />
+      <Item value="Name" priority="3" />
+      <Item value="ValuesAttribute`0" priority="0" />
+      <Item value="Matcher`0" priority="0" />
+      <Item value="i" priority="0" />
+      <Item value="view" priority="0" />
+      <Item value="Factory" priority="0" />
+      <Item value="None" priority="0" />
+      <Item value="ContactType`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock.EventInvoker`1">
+      <Item value="Invoke`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="AreEqual`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock3.Tutorial.ContactManagementPresenter">
+      <Item value="Status" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock.Mock`1">
+      <Item value="Expects" priority="5" />
+      <Item value="MockObject" priority="3" />
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock.Expects`1">
+      <Item value="One" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock.Syntax.IMethodSyntax`1">
+      <Item value="EventBinding`1" priority="0" />
+      <Item value="GetProperty`1" priority="1" />
+      <Item value="SetProperty`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock3.Tutorial.IContactManagementView">
+      <Item value="Init" priority="0" />
+      <Item value="Name" priority="4" />
+      <Item value="SuffixDataSource" priority="0" />
+      <Item value="Id" priority="1" />
+      <Item value="ContactType" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock.Syntax.IAutoActionSyntax`1">
+      <Item value="WillReturn`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock.Syntax.IAutoValueSyntax`1">
+      <Item value="To`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NMock.MockFactory">
+      <Item value="VerifyAllExpectationsHaveBeenMet`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NMock3.Tutorial.ContactType">
+      <Item value="Vendor" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise1Tests.cs" caret="2352" fromTop="14" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 3 - Events/f:Exercise3Tests.cs" caret="2717" fromTop="9" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise3Tests.cs" caret="1848" fromTop="12" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise4Tests.cs" caret="1469" fromTop="1" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise2Tests.cs" caret="1671" fromTop="10" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise5Tests.cs" caret="2564" fromTop="10" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 5 - Methods/f:Exercise1Tests.cs" caret="0" fromTop="0" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 6 - Shortcuts/f:Exercise1Tests.cs" caret="0" fromTop="0" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 7 - Equivalence/f:Exercise1Tests.cs" caret="2119" fromTop="10" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:FAQ/f:ExamplesBase.cs" caret="0" fromTop="0" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 7 - Equivalence/f:Exercise2Tests.cs" caret="434" fromTop="0" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:FAQ/f:PropertyExamples.cs" caret="1251" fromTop="14" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 3 - Events/f:Exercise3Tests.cs" caret="2717" fromTop="9" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise1Tests.cs" caret="2352" fromTop="14" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise3Tests.cs" caret="1848" fromTop="12" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise2Tests.cs" caret="1671" fromTop="13" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise5Tests.cs" caret="1740" fromTop="6" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 4 - Properties/f:Exercise5Tests.cs" caret="2564" fromTop="10" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:Lesson 7 - Equivalence/f:Exercise1Tests.cs" caret="2119" fromTop="10" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:FAQ/f:PropertyExamples.cs" caret="1360" fromTop="15" />
+      <File id="5DDC007D-B713-4F56-8B1C-C15FA66A4514/d:FAQ/f:PropertyExamples.cs" caret="1251" fromTop="14" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.4.5\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

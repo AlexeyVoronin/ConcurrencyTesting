@@ -4,11 +4,12 @@
     <ProjectGuid>{A6DB21BC-A0B8-420F-896A-EAE5B2BF52EE}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>ChessTest</RootNamespace>
     <AssemblyName>ChessTest</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SourceAnalysisOverrideSettingsFile>C:\Users\Ofira\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <SignAssembly>False</SignAssembly>
@@ -46,29 +47,11 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Concurrency.UnitTesting.Execution">
-      <HintPath>..\..\Temp\Chess\debug\Microsoft.Concurrency.UnitTesting.Execution.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Concurrency.UnitTesting.Extensions">
-      <HintPath>..\..\Temp\Chess\debug\Microsoft.Concurrency.UnitTesting.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Concurrency.UnitTestingFramework">
-      <HintPath>..\..\Temp\Chess\bin\Microsoft.Concurrency.UnitTestingFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Concurrency.UnitTestingFramework">
-      <HintPath>..\..\Temp\Chess\debug\Microsoft.Concurrency.UnitTestingFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ManagedChess.MChess">
-      <HintPath>bin\Debug\Microsoft.ManagedChess.MChess.dll</HintPath>
-    </Reference>
     <Reference Include="NMock3">
-      <HintPath>..\..\Users\Ofira\Downloads\NMock3 NetFx4 v3.3.30.0\NMock3.dll</HintPath>
+      <HintPath>..\libs\NMock3\NMock3.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\Program Files %28x86%29\SharpDevelop\4.2\bin\Tools\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\..\Users\Ofira\Downloads\Rhino.Mocks-3.6-Build-21\Rhino.Mocks.dll</HintPath>
+      <HintPath>..\libs\NUnit\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -80,22 +63,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs" />
-    <Compile Include="CategoryFacade.cs" />
-    <Compile Include="CategoryTests.cs" />
-    <Compile Include="ChessTest.cs" />
     <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="IFactory.cs" />
-    <Compile Include="IStorage.cs" />
-    <Compile Include="MemoryStorage.cs" />
-    <Compile Include="MemoryStorageTests.cs" />
-    <Compile Include="MultiThreadTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReaderWriterLockExtensions.cs" />
     <Compile Include="SynchronizedFactoryCache.cs" />
     <Compile Include="SynchronizedFactoryCacheTest.cs" />
     <Compile Include="TestCategoryAttribute.cs" />
     <Compile Include="ThreadAccessManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
