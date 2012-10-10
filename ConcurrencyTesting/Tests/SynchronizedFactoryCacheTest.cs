@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -8,7 +7,7 @@ using Asteros.Abc.Common.Factories;
 using NMock;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ChessTest
+namespace ConcurrencyTestTools
 {
 	[TestClass]
 	public class SynchronizedFactoryCacheTest
@@ -16,12 +15,12 @@ namespace ChessTest
 		[TestMethod]
 		public void SimpleTest()
 		{
-			MockFactory mockFactory = new MockFactory();
+			var mockFactory = new MockFactory();
 			
 			var obj1 = new object();
 			var obj2 = new object();
-			var key1 = 1;
-			var key2 = 2;
+			const int key1 = 1;
+			const int key2 = 2;
 			
 			var factoryMock = mockFactory.CreateMock<IFactory<int, object>>(); 
 			factoryMock.Stub.Out.MethodWith(o => o.Create(key1)).WillReturn(obj1);
@@ -40,12 +39,12 @@ namespace ChessTest
     [TestMethod]
 		public void RegisterMethodTest()
 		{
-			MockFactory mockFactory = new MockFactory();
+			var mockFactory = new MockFactory();
 			
 			var obj1 = new object();
 			var obj2 = new object();
-			var key1 = 1;
-			var key2 = 2;
+			const int key1 = 1;
+			const int key2 = 2;
 			
 			var factoryMock = mockFactory.CreateMock<IFactory<int, object>>(); 
 			factoryMock.Stub.Out.MethodWith(o => o.Create(key1)).WillReturn(obj1);

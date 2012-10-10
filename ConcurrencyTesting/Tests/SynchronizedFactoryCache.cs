@@ -5,7 +5,7 @@ using System.Threading;
 
 using Asteros.Abc.Common.Collections;
 using Asteros.Abc.Common.Threading;
-using ChessTest;
+using ConcurrencyTestTools;
 
 namespace Asteros.Abc.Common.Factories
 {
