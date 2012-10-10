@@ -79,8 +79,11 @@ namespace ConcurrencyTestTools
 					i => i != element && 
 					i.Start.Ticks >= element.Start.Ticks && 
 					i.Start.Ticks <= element.End.Ticks).ToList();
-				
-							
+
+        if (element.IsThreadSafe)
+          elementsWithSameTime = elementsWithSameTime.Where(
+            o => o.Method != element.Method).ToList();
+											
 				if (elementsWithSameTime.Any())
 					Assert.Fail("Detected concurent access: {0}{1}{0}{0}{2}", 
 					            Environment.NewLine,
@@ -134,11 +137,13 @@ namespace ConcurrencyTestTools
         factoryCache.AccessManager.UnblockCurrentThreadsAndBlock(
           0, null);
 
-        Assert.IsTrue(thread2.Join(1000));
-        Assert.IsTrue(thread1.Join(1000));
+        Assert.IsTrue(thread2.Join(10000));
+        Assert.IsTrue(thread1.Join(10000));
 
         var i = factoryCache.AccessManager.GetMethodAccessInfo();
         ValidateAccessRules(i);
+
+        Console.WriteLine("Test");
       }
 
 

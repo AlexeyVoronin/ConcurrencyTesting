@@ -23,6 +23,18 @@ namespace ConcurrencyTestTools
 		{
 			_registeredAccess.Clear();
 		}
+
+    public ThreadAccessManager<T> RegisterThreadSafeMethod<TResult>(
+      Expression<Func<T, TResult>> invokeExpression)
+    {
+      var threadSafeMethod = ExtractMethodInfoFromExpression(invokeExpression);
+
+      _threadSafeMethods.Add(threadSafeMethod);
+
+      return this;
+    }
+
+    private readonly IList<MethodInfo> _threadSafeMethods = new List<MethodInfo>();
 		
 		public WaitHandle UnblockCurrentThreadsAndBlock(
 			int threadId, MethodInfo method)
@@ -48,14 +60,14 @@ namespace ConcurrencyTestTools
 				_startBlockWaitHandle.Set();
 				_waitHandle.WaitOne();				
 			}
-			
-			Thread.Sleep(1);
+
+      Thread.Sleep(100);
 			var accessInfo = RegisterMethodCallBegin(invokeExpression);
-			Thread.Sleep(1);
+      Thread.Sleep(100);
 			var result = invokeExpression.Compile().Invoke(_wrappedObject);
-			Thread.Sleep(1);
+			Thread.Sleep(100);
 			RegisterMethodCallEnd(accessInfo);
-			Thread.Sleep(1);
+      Thread.Sleep(100);
 			return result;
 		}
 		
@@ -68,7 +80,8 @@ namespace ConcurrencyTestTools
 				CallExpression = invokeExpression,
 				Start = DateTime.Now,
 				Method = method,
-				Thread = Thread.CurrentThread
+				Thread = Thread.CurrentThread,
+        IsThreadSafe = _threadSafeMethods.Contains(method)
 			};
 			lock(_registeredAccess)
 			{
@@ -109,10 +122,11 @@ namespace ConcurrencyTestTools
 		public DateTime End { get; set; }
 		public LambdaExpression CallExpression { get; set; }
 		public MethodInfo Method { get; set; }
+    public bool IsThreadSafe { get; set; }
 		
 		override public string ToString()
 		{
-			return string.Format("{0} [{1}] ({2} - {3})",
+			return string.Format("{0} [{1}] ({2:o} - {3:o})",
 			                     CallExpression,
 			                     Thread.ManagedThreadId,
 			                     Start,

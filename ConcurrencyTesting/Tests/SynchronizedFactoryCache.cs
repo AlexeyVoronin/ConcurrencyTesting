@@ -41,10 +41,12 @@ namespace Asteros.Abc.Common.Factories
             _readerWriterLock.Dispose();
         }
 
-        internal readonly ThreadAccessManager<IDictionary<TKey, TValue>> AccessManager = 
-        	new ThreadAccessManager<IDictionary<TKey, TValue>>(
-        		new Dictionary<TKey, TValue>());
-        
+        internal readonly ThreadAccessManager<IDictionary<TKey, TValue>> AccessManager =
+          new ThreadAccessManager<IDictionary<TKey, TValue>>(
+            new Dictionary<TKey, TValue>())
+            .RegisterThreadSafeMethod(o => o.TryGetValue(default(TKey), out tempValue));
+
+        private static TValue tempValue;
         private readonly IFactory<TKey, TValue> _factory;
         private readonly ReaderWriterLockSlim _readerWriterLock = new ReaderWriterLockSlim();
     }
