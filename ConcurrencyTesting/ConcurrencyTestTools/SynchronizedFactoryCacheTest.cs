@@ -6,14 +6,14 @@ using System.Threading;
 
 using Asteros.Abc.Common.Factories;
 using NMock;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ChessTest
 {
-	[TestFixture]
+	[TestClass]
 	public class SynchronizedFactoryCacheTest
 	{
-		[Test]
+		[TestMethod]
 		public void SimpleTest()
 		{
 			MockFactory mockFactory = new MockFactory();
@@ -36,8 +36,8 @@ namespace ChessTest
 			
 			mockFactory.VerifyAllExpectationsHaveBeenMet();
 		}
-		
-		[Test]
+
+    [TestMethod]
 		public void RegisterMethodTest()
 		{
 			MockFactory mockFactory = new MockFactory();
@@ -90,7 +90,7 @@ namespace ChessTest
 			}			
 		}
 
-    [Test]
+    [TestMethod]
     public void SimpleMultiThreadTest()
     {
       MockFactory mockFactory = new MockFactory();
