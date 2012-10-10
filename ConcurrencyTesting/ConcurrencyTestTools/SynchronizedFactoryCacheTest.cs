@@ -89,54 +89,61 @@ namespace ChessTest
 					            elementsWithSameTime.First());
 			}			
 		}
-		
-		[Test]
-		public void SimpleMultiThreadTest()
-		{
-			MockFactory mockFactory = new MockFactory();
-			
-			var obj1 = new object();
-			var obj2 = new object();
-			var key1 = 1;
-			var key2 = 2;
-			
-			var factoryMock = mockFactory.CreateMock<IFactory<int, object>>(); 
-			factoryMock.Stub.Out.MethodWith(o => o.Create(key1)).WillReturn(obj1);
-			factoryMock.Stub.Out.MethodWith(o => o.Create(key2)).WillReturn(obj2);
-			
-			var factory = factoryMock.MockObject;
-			var factoryCache = new SynchronizedFactoryCache<int, object>(factory);
-			
-			factoryCache.Create(key1);
-			factoryCache.Create(key2);
-			factoryCache.Create(key2);
-			
-			var accessInfo = factoryCache.AccessManager.GetMethodAccessInfo().ToList();
-			Assert.AreEqual(5, accessInfo.Count());
-			
-			ValidateAccessRules(accessInfo);
-						
-			foreach (var element in accessInfo) {
-				factoryCache.AccessManager.ClearAccessInfo();
-				ThreadStart action = () => factoryCache.Create(key1);
-				var thread1 = new Thread((ThreadStart)action);
-				var thread2 = new Thread((ThreadStart)action);
-				
-				var waitHandle = factoryCache.AccessManager.UnblockCurrentThreadsAndBlock(
-					thread2.ManagedThreadId, element.Method);
-				
-				thread2.Start();
-				waitHandle.WaitOne();
-				thread1.Start();
-				thread1.Join();
-				thread2.Abort();
-				
-				var i = factoryCache.AccessManager.GetMethodAccessInfo();
-				ValidateAccessRules(i);
-			}
-			
 
-			mockFactory.VerifyAllExpectationsHaveBeenMet();
-		}
+    [Test]
+    public void SimpleMultiThreadTest()
+    {
+      MockFactory mockFactory = new MockFactory();
+
+      var obj1 = new object();
+      var obj2 = new object();
+      var key1 = 1;
+      var key2 = 2;
+
+      var factoryMock = mockFactory.CreateMock<IFactory<int, object>>();
+      factoryMock.Stub.Out.MethodWith(o => o.Create(key1)).WillReturn(obj1);
+      factoryMock.Stub.Out.MethodWith(o => o.Create(key2)).WillReturn(obj2);
+
+      var factory = factoryMock.MockObject;
+      var factoryCache = new SynchronizedFactoryCache<int, object>(factory);
+
+      factoryCache.Create(key1);
+      factoryCache.Create(key2);
+      factoryCache.Create(key2);
+
+      var accessInfo = factoryCache.AccessManager.GetMethodAccessInfo().ToList();
+      Assert.AreEqual(5, accessInfo.Count());
+
+      ValidateAccessRules(accessInfo);
+
+      foreach (var element in accessInfo)
+      {
+        factoryCache = new SynchronizedFactoryCache<int, object>(factory);
+        factoryCache.AccessManager.ClearAccessInfo();
+        ThreadStart action = () => factoryCache.Create(key1);
+        var thread1 = new Thread((ThreadStart)action);
+        var thread2 = new Thread((ThreadStart)action);
+
+        var waitHandle = factoryCache.AccessManager.UnblockCurrentThreadsAndBlock(
+          thread2.ManagedThreadId, element.Method);
+
+        thread2.Start();
+        waitHandle.WaitOne();
+        thread1.Start();
+        thread1.Join(1000);
+
+        factoryCache.AccessManager.UnblockCurrentThreadsAndBlock(
+          0, null);
+
+        Assert.IsTrue(thread2.Join(1000));
+        Assert.IsTrue(thread1.Join(1000));
+
+        var i = factoryCache.AccessManager.GetMethodAccessInfo();
+        ValidateAccessRules(i);
+      }
+
+
+      mockFactory.VerifyAllExpectationsHaveBeenMet();
+    }
 	}
 }
