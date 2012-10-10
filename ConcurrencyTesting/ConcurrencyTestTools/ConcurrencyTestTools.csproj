@@ -5,8 +5,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>ChessTest</RootNamespace>
-    <AssemblyName>ChessTest</AssemblyName>
+    <RootNamespace>ConcurrencyTestTools</RootNamespace>
+    <AssemblyName>ConcurrencyTestTools</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -47,12 +47,6 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NMock3">
-      <HintPath>..\libs\NMock3\NMock3.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\libs\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -63,13 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DictionaryExtensions.cs" />
-    <Compile Include="IFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReaderWriterLockExtensions.cs" />
-    <Compile Include="SynchronizedFactoryCache.cs" />
-    <Compile Include="SynchronizedFactoryCacheTest.cs" />
-    <Compile Include="TestCategoryAttribute.cs" />
     <Compile Include="ThreadAccessManager.cs" />
   </ItemGroup>
   <ItemGroup>

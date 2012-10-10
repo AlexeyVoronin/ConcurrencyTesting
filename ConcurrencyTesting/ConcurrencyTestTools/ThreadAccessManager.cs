@@ -1,15 +1,12 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading;
 
-using Asteros.Abc.Common.Collections;
-
-namespace ChessTest
+namespace ConcurrencyTestTools
 {
-	internal sealed class ThreadAccessManager<T>
+    public sealed class ThreadAccessManager<T>
 		where T : class
 	{
 		public ThreadAccessManager(T wrappedObject)
@@ -66,7 +63,7 @@ namespace ChessTest
 			Expression<Func<T, TResult>> invokeExpression)
 		{			
 			var method = ExtractMethodInfoFromExpression(invokeExpression);
-			var accessInfo = new MethodAccessInfo()
+			var accessInfo = new MethodAccessInfo
 			{
 				CallExpression = invokeExpression,
 				Start = DateTime.Now,
@@ -104,8 +101,8 @@ namespace ChessTest
 		private AutoResetEvent _startBlockWaitHandle;
 		
 	}
-	
-	internal sealed class MethodAccessInfo
+
+    public sealed class MethodAccessInfo
 	{
 		public Thread Thread { get; set; }
 		public DateTime Start { get; set; }
