@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Asteros.Abc.Common.Threading
+namespace Threading
 {
     internal static class ReaderWriterLockExtensions
     {

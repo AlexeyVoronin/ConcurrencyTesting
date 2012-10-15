@@ -1,4 +1,4 @@
-﻿namespace Asteros.Abc.Common.Factories
+﻿namespace Factories
 {
     public interface IFactory<in TKey, out TValue>
     {

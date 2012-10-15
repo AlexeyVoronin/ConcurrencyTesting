@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Asteros.Abc.Common.Collections
+namespace Collections
 {
     internal static class DictionaryExtensions
     {
