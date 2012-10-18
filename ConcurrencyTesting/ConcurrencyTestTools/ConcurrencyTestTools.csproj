@@ -58,11 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConcurrentAccessTester.cs" />
-    <Compile Include="IScenarioPairTester.cs" />
+    <Compile Include="IScenarioTester.cs" />
     <Compile Include="IThreadUnsafeResource.cs" />
     <Compile Include="MethodAccessInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioPairTester.cs" />
+    <Compile Include="ScenarioTester.cs" />
     <Compile Include="ThreadUnsafeResource.cs" />
     <Compile Include="UnsafeThreadAccessException.cs" />
   </ItemGroup>

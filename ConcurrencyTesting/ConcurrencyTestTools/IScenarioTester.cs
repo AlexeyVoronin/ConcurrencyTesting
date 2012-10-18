@@ -1,6 +1,6 @@
 ﻿namespace ConcurrencyTestTools
 {
-    public interface IScenarioPairTester
+    public interface IScenarioTester
     {
         void Test();
     }

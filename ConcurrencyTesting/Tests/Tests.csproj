@@ -48,7 +48,7 @@
     <Compile Include="ConcurrentAccessTesterTests.cs" />
     <Compile Include="IThreadUnsafeResource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioPairTesterTests.cs" />
+    <Compile Include="ScenarioTesterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConcurrencyTestTools\ConcurrencyTestTools.csproj">
