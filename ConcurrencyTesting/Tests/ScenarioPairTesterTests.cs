@@ -33,6 +33,22 @@ namespace Tests
             tester.Test();
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(UnsafeThreadAccessException))]
+        public void TwoThreadAccessedResourceTest()
+        {
+            var threadUnsafeResourceMock = _mockFactory.CreateMock<IThreadUnsafeResource>();
+            var eventInvokerMock = threadUnsafeResourceMock.Expects
+                .AtLeastOne.EventBinding(r => r.InvocationIntercepted += null);
+
+            var tester = new ScenarioPairTester(
+                () => eventInvokerMock.Invoke(new EventArgs()),
+                () => eventInvokerMock.Invoke(new EventArgs()),
+                threadUnsafeResourceMock.MockObject);
+
+            tester.Test();
+        }
+
         [TestCleanup]
         public void TestCleanup()
         {
