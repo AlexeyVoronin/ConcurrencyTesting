@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Threading.SyncObjects
 {
-  public sealed class ReaderWriterLock : IReaderWriterLock
+  public sealed class ReaderWriterLockSlimProxy : IReaderWriterLock
   {
     #region IReaderWriterLock Members
 

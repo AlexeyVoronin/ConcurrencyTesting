@@ -33,6 +33,9 @@ namespace Tests
             tester.Test();
         }
 
+        [TestMethod]
+        
+
         [TestCleanup]
         public void TestCleanup()
         {

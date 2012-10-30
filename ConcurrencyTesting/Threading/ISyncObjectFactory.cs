@@ -8,5 +8,7 @@ namespace Threading
   public interface ISyncObjectFactory
   {
     IReaderWriterLock CreateReaderWriterLock(object resource);
+
+    IMonitor CreateMonitor(object resource);
   }
 }

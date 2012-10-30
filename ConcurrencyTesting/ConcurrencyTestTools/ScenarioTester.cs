@@ -2,7 +2,7 @@
 
 namespace ConcurrencyTestTools
 {
-  public class ScenarioTester : IScenarioTester
+  public sealed class ScenarioTester : IScenarioTester
   {
     public ScenarioTester(Action scenario1, IThreadUnsafeResource threadUnsafeResource)
     {
