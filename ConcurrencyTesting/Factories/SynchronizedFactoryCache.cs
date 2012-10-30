@@ -17,7 +17,7 @@ namespace Factories
     {
       _cache = cache;
       _factory = factory;
-      _readerWriterLock = syncObjectFactory.CreateReaderWriterLock();
+      _readerWriterLock = syncObjectFactory.CreateReaderWriterLock(_cache);
     }
 
     public TValue Create(TKey key)

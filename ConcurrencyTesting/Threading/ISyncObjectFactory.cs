@@ -7,6 +7,6 @@ namespace Threading
 {
   public interface ISyncObjectFactory
   {
-    IReaderWriterLock CreateReaderWriterLock();
+    IReaderWriterLock CreateReaderWriterLock(object resource);
   }
 }
