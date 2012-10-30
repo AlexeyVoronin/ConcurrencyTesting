@@ -5,14 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F542B580-E440-4292-A18C-AE212CCCB7F3}</ProjectGuid>
+    <ProjectGuid>{129CFBCF-A158-4E3F-8EF3-4962004D9F79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tests</RootNamespace>
-    <AssemblyName>Tests</AssemblyName>
+    <RootNamespace>Threading</RootNamespace>
+    <AssemblyName>Threading</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="NMock3">
-      <HintPath>..\..\libs\NMock3\NMock3.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,25 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConcurrentAccessTesterTests.cs" />
-    <Compile Include="IThreadUnsafeResource.cs" />
+    <Compile Include="IReaderWriterLock.cs" />
+    <Compile Include="ISyncObjectFactory.cs" />
+    <Compile Include="IThreadLocksManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioPairTesterTests.cs" />
-    <Compile Include="ReaderWriterLockTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConcurrencyTestTools\ConcurrencyTestTools.csproj">
-      <Project>{A6DB21BC-A0B8-420F-896A-EAE5B2BF52EE}</Project>
-      <Name>ConcurrencyTestTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Factories\Factories.csproj">
-      <Project>{093D5772-00F9-4558-B17E-567806324631}</Project>
-      <Name>Factories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Threading\Threading.csproj">
-      <Project>{129CFBCF-A158-4E3F-8EF3-4962004D9F79}</Project>
-      <Name>Threading</Name>
-    </ProjectReference>
+    <Compile Include="ReaderWriterLockExtensions.cs" />
+    <Compile Include="SyncObjects\ReaderWriterLock.cs" />
+    <Compile Include="ThreadLocksManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
