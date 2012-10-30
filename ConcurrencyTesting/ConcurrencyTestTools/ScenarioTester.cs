@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConcurrencyTestTools
 {
@@ -30,25 +31,30 @@ namespace ConcurrencyTestTools
 
     void _resourceLockNotifier_ResourceLocked(object sender, ResourceLockEventArgs e)
     {
+      _lockedResources.Add(e.Resource);
     }
 
     void _resourceLockNotifier_ResourceUnlocked(object sender, ResourceLockEventArgs e)
     {
+      _lockedResources.Remove(e.Resource);
     }
 
     private void _threadUnsafeResource_InvocationIntercepted(object sender, EventArgs e)
     {
-      InterceptResourceInvocation();
+      InterceptResourceInvocation(sender);
     }
 
-    private void InterceptResourceInvocation()
+    private void InterceptResourceInvocation(object resource)
     {
-      _isUnsafeInvocationDetected = true;
+      if (!_lockedResources.Contains(resource))
+        _isUnsafeInvocationDetected = true;
     }
 
     private readonly Action _scenario1;
     private readonly IThreadUnsafeResource _threadUnsafeResource;
     private readonly IResourceLockNotifier _resourceLockNotifier;
     private bool _isUnsafeInvocationDetected;
+
+    private readonly ICollection<object> _lockedResources = new HashSet<object>();
   }
 }

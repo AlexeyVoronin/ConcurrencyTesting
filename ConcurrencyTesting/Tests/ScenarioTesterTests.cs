@@ -53,7 +53,7 @@ namespace Tests
       Action scenario = () =>
         {
           resourceLockedEventDispatcher.Invoke(new ResourceLockEventArgs(threadUnsafeResourceMock));
-          invocationInterceptedEventDispatcher.Invoke(new EventArgs());
+          invocationInterceptedEventDispatcher.Invoke(threadUnsafeResourceMock, new EventArgs());
           resourceUnlockedEventDispatcher.Invoke(new ResourceLockEventArgs(threadUnsafeResourceMock));
         };
 
@@ -80,7 +80,7 @@ namespace Tests
       Action scenario = () =>
       {
         resourceLockedEventDispatcher.Invoke(new ResourceLockEventArgs(new object()));
-        invocationInterceptedEventDispatcher.Invoke(new EventArgs());
+        invocationInterceptedEventDispatcher.Invoke(threadUnsafeResourceMock, new EventArgs());
         resourceUnlockedEventDispatcher.Invoke(new ResourceLockEventArgs(new object()));
       };
 
