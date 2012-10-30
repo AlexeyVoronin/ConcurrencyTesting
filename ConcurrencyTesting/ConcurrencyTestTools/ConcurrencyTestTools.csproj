@@ -69,5 +69,11 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Threading\Threading.csproj">
+      <Project>{129CFBCF-A158-4E3F-8EF3-4962004D9F79}</Project>
+      <Name>Threading</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
